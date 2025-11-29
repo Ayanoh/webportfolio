@@ -1,230 +1,150 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
-import {
+import { 
   FaAws,
-  FaCss3,
+  FaCertificate,
   FaDocker,
   FaEnvelope,
-  FaGit,
   FaGithub,
-  FaHtml5,
+  FaGraduationCap,
   FaLinkedin,
-  FaLinux,
-  FaNodeJs,
+  FaMapMarkerAlt,
   FaPhone,
-  FaReact,
-  FaVuejs,
-  FaYarn,
-} from "react-icons/fa6";
+  FaPython,
+  FaShieldAlt,
+} from "react-icons/fa";
 import {
-  RiFirebaseFill,
-  RiJavascriptFill,
-  RiNextjsFill,
-  RiTailwindCssFill,
-} from "react-icons/ri";
-import {
-  SiExpress,
-  SiJavascript,
-  SiKubuntu,
-  SiPm2,
-  SiPrettier,
-  SiTypescript,
-  SiVercel,
-  SiVisualstudiocode,
+  SiWireshark,
+  SiSplunk,
+  SiKalilinux,
+  SiVisualstudio,
 } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
 
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { TbTerminal2 } from "react-icons/tb";
 
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "abhijitzende75@gmail",
-    href: "mailto:abhijitzende75@gmail.com",
-    icon: <FaEnvelope height={"50px"} />,
+    content: "oussama.elmaskaoui@gmail.com",
+    href: "mailto:oussama.elmaskaoui@gmail.com",
+    icon: <FaEnvelope size={24} />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:8308509180",
-    icon: <FaPhone height={"50px"} />,
+    content: "+212 614 974 221",
+    href: "tel:+212614974221",
+    icon: <FaPhone size={24} />,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/zende-abhijit/",
-    content: "/zende-abhijit",
-    icon: <FaLinkedin height={"50px"} />,
+    href: "https://www.linkedin.com/in/oussama-el-maskaoui/",
+    content: "/oussama-el-maskaoui",
+    icon: <FaLinkedin size={24} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/Abhiz2411",
-    content: "/naresh-khatri",
-    icon: <FaGithub height={"50px"} />,
+    href: "https://github.com/oussama-el-maskaoui",
+    content: "/oussama-el-maskaoui",
+    icon: <FaGithub size={24} />,
   },
 ];
 
 const TOOLS = [
   {
-    name: "JavaScript",
-    content: "JavaScript is a high-level, interpreted programming language",
-    icon: <SiJavascript size={"50px"} color={"#f0db4f"} />,
-    color: "#f0db4f",
+    name: "Python",
+    icon: <FaPython size={50} color="#3776ab" />,
+    color: "#3776ab",
   },
   {
-    name: "TypeScript",
-    content: "TypeScript is a superset of JavaScript that compiles to plain JS",
-    icon: <SiTypescript size={"50px"} color={"#007acc"} />,
-    color: "#007acc",
+    name: "Wireshark",
+    icon: <SiWireshark size={50} color="#1679A7" />,
+    color: "#1679A7",
   },
   {
-    name: "HTML",
-    content: "Next.js is a React framework for production",
-    icon: <FaHtml5 size={"50px"} color="#e34c26" />,
-    color: "#e34c26",
+    name: "Splunk",
+    icon: <SiSplunk size={50} color="#000000" />,
+    color: "#000000",
   },
   {
-    name: "CSS",
-    content: "Next.js is a React framework for production",
-    icon: <FaCss3 size={"50px"} color="#563d7c" />,
-    color: "#563d7c",
-  },
-  {
-    name: "Nodejs",
-    content: "Next.js is a React framework for production",
-    icon: <FaNodeJs size={"50px"} color="#6cc24a" />,
-    color: "#6cc24a",
-  },
-  {
-    name: "React.js",
-    content: "Next.js is a React framework for production",
-    icon: <FaReact size={"50px"} color="#61dafb" />,
-    color: "#61dafb",
+    name: "Kali Linux",
+    icon: <SiKalilinux size={50} color="#557C94" />,
+    color: "#557C94",
   },
   {
     name: "Docker",
-    content: "Next.js is a React framework for production",
-    icon: <FaDocker size={"50px"} color="#2496ed" />,
+    icon: <FaDocker size={50} color="#2496ed" />,
     color: "#2496ed",
   },
   {
-    name: "NginX",
-    content: "Next.js is a React framework for production",
-    icon: <DiNginx size={"50px"} color="#008000" />,
-    color: "#008000",
-  },
-  {
-    name: "Vue.js",
-    content: "Next.js is a React framework for production",
-    icon: <FaVuejs size={"50px"} color="#41b883" />,
-    color: "#41b883",
-  },
-  {
-    name: "Express.js",
-    content: "Next.js is a React framework for production",
-    icon: <SiExpress size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "PostgreSQL",
-    content: "Next.js is a React framework for production",
-    icon: <DiPostgresql size={"50px"} color="#336791" />,
-    color: "#336791",
-  },
-  {
-    name: "MongoDB",
-    content: "Next.js is a React framework for production",
-    icon: <DiMongodb size={"50px"} color="#4db33d" />,
-    color: "#4db33d",
-  },
-  {
-    name: "Tailwind CSS",
-    content: "Next.js is a React framework for production",
-    icon: <RiTailwindCssFill size={"50px"} color="#06b6d4" />,
-    color: "#06b6d4",
-  },
-  {
-    name: "Firebase",
-    content: "Next.js is a React framework for production",
-    icon: <RiFirebaseFill size={"50px"} color="#FFCA28" />,
-    color: "#FFCA28",
-  },
-  {
-    name: "Git",
-    content: "Next.js is a React framework for production",
-    icon: <FaGit size={"50px"} color="#f05032" />,
-    color: "#f05032",
-  },
-  {
-    name: "GitHub",
-    content: "Next.js is a React framework for production",
-    icon: <FaGithub size={"50px"} color="#fff" />,
-    color: "#000000",
+    name: "AWS",
+    icon: <FaAws size={50} color="#FF9900" />,
+    color: "#FF9900",
   },
   {
     name: "VS Code",
-    content: "Next.js is a React framework for production",
-    icon: <SiVisualstudiocode size={"50px"} color="#007acc" />,
+    icon: <SiVisualstudio size={50} color="#007acc" />,
     color: "#007acc",
   },
+];
+
+const CERTIFICATIONS = [
   {
-    name: "VIM",
-    content: "Next.js is a React framework for production",
-    icon: <DiVim size={"50px"} color="#fff" />,
-    color: "#000000",
+    name: "CompTIA Security+",
+    code: "SY0-701",
+    issuer: "CompTIA",
+    year: "2024",
   },
   {
-    name: "Prettier",
-    content: "Next.js is a React framework for production",
-    icon: <SiPrettier size={"50px"} color="#f7b93c" />,
-    color: "#f7b93c",
+    name: "AWS Cloud Practitioner",
+    code: "Essentials",
+    issuer: "Amazon Web Services",
+    year: "2024",
   },
   {
-    name: "NPM",
-    content: "Next.js is a React framework for production",
-    icon: <DiNpm size={"50px"} color="#CB3837" />,
-    color: "#CB3837",
+    name: "SOC Analyst Path",
+    code: "Complete",
+    issuer: "LetsDefend",
+    year: "2024",
   },
   {
-    name: "Yarn",
-    content: "Next.js is a React framework for production",
-    icon: <FaYarn size={"50px"} color="#2C8EBB" />,
-    color: "#2C8EBB",
+    name: "CCNA: Introduction to Networks",
+    code: "CCNA",
+    issuer: "Cisco",
+    year: "2024",
+  },
+];
+
+const EXPERIENCES = [
+  {
+    title: "SOC Analyst",
+    company: "Sekera",
+    location: "Casablanca, Morocco",
+    period: "April 2025 - Present",
+    description: [
+      "Developing an AI-powered SOC assistant to automatically analyze security alerts",
+      "Integrating TheHive, VirusTotal, and SentinelOne through function calling",
+      "Using advanced prompts to drive incident response without fixed workflows",
+    ],
   },
   {
-    name: "Vercel",
-    content: "Next.js is a React framework for production",
-    icon: <SiVercel size={"50px"} color="#fff" />,
-    color: "#000000",
+    title: "Technical Account Manager",
+    company: "Orange",
+    location: "Casablanca, Morocco",
+    period: "July 2024 - August 2024",
+    description: [
+      "Contributed to telecommunications network audits (FH PTP)",
+      "Improved B2B infrastructure quality for 70+ clients",
+      "Collaborated with multiple teams for network optimization",
+    ],
   },
-  {
-    name: "Linux",
-    content: "Next.js is a React framework for production",
-    icon: <FaLinux size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "Kubuntu",
-    content: "Next.js is a React framework for production",
-    // give me correct color for  kubuntu
-    icon: <SiKubuntu size={"50px"} color="#0077C4" />,
-    color: "#000000",
-  },
-  {
-    name: "Terminal",
-    content: "Next.js is a React framework for production",
-    icon: <TbTerminal2 size={"50px"} color="#fff" />,
-    color: "#000000",
-  },
-  {
-    name: "AWS",
-    content: "Next.js is a React framework for production",
-    icon: <FaAws size={"50px"} color="#3f51b5" />,
-    color: "#000000",
-  },
+];
+
+const LANGUAGES = [
+  { name: "Arabic", level: "Native", percentage: 100 },
+  { name: "French", level: "Fluent", percentage: 95 },
+  { name: "English", level: "Professional", percentage: 90 },
 ];
 
 function Page() {
@@ -232,12 +152,14 @@ function Page() {
   useEffect(() => {
     setToolsLoaded(true);
   }, []);
+
   return (
     <div className="container mx-auto px-4 md:px-[50px] xl:px-[200px] text-zinc-300 pt-20 pb-20">
       <div className="flex flex-col lg:flex-row gap-5">
+        {/* SIDEBAR */}
         <aside className="w-full md:basis-1/4">
           <div
-            className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-zinc-600"
+            className="p-4 md:p-8 lg:p-10 rounded-2xl border-[.5px] border-zinc-600 sticky top-24"
             style={{
               backdropFilter: "blur(2px)",
             }}
@@ -245,15 +167,15 @@ function Page() {
             <div className="flex flex-row lg:flex-col items-center">
               <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
                 <img
-                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800"
-                  alt="me"
+                  className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square bg-zinc-800"
+                  alt="Oussama EL Maskaoui"
                   src="/assets/me.jpg"
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl font-bold">Oussama EL Maskaoui</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  Cybersecurity Engineer
                 </div>
               </div>
             </div>
@@ -263,8 +185,10 @@ function Page() {
                 {CONTACT_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
-                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md "
+                      className="flex items-center px-3 gap-3 w-full h-12 border-zinc-700 bg-zinc-800 hover:border-zinc-600 border-[.5px] rounded-md transition-all"
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <div className="w-8">{link.icon}</div>
                       <div className="flex flex-col">
@@ -280,25 +204,150 @@ function Page() {
             </div>
           </div>
         </aside>
-        <main className="basis-3/4 w-[500px]">
+
+        {/* MAIN CONTENT */}
+        <main className="basis-3/4 w-full space-y-8">
+          {/* ABOUT ME SECTION */}
           <div
             className="p-10 border-[.5px] rounded-md border-zinc-600"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
-            <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Abhijit, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and 
-              Database management with hands-on experience in deploying & automating workflows, and 
-              collaborating with foreign clients. Strong analytical skills,effective communication,
-              and a team-oriented approach to driving process improvements and delivering results.
-            </p>
-            <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
-            </p>
-            <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
-            <div className="mb-5">
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">About Me</h1>
+            <div className="space-y-4 text-zinc-300">
+              <p className="leading-relaxed">
+                I&apos;m a final-year <span className="text-cyan-400 font-semibold">Cybersecurity Engineering student</span> at the <span className="text-cyan-400 font-semibold">Mohammadia School of Engineers (EMI)</span>, passionate about how AI and automation reshape modern Security Operations Centers.
+              </p>
+              <p className="leading-relaxed">
+                Certified in <span className="text-cyan-400 font-semibold">CompTIA Security+</span>, I specialize in building intelligent systems that enhance detection, response, and decision-making in security operations.
+              </p>
+              <p className="leading-relaxed">
+                My key interests include <span className="text-cyan-400 font-semibold">Incident Response</span>, <span className="text-cyan-400 font-semibold">Digital Forensics</span>, and <span className="text-cyan-400 font-semibold">AI-driven Threat Analysis</span>.
+              </p>
+              <p className="leading-relaxed">
+                I value innovation, continuous learning, and bridging the gap between human expertise and machine intelligence. Let&apos;s build the next generation of smarter, faster, and autonomous security operations.
+              </p>
+            </div>
+          </div>
+
+          {/* EXPERIENCE SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Professional Experience</h1>
+            <div className="space-y-6">
+              {EXPERIENCES.map((exp, index) => (
+                <div key={index} className="border-l-2 border-cyan-400 pl-6">
+                  <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                  <p className="text-cyan-400 font-medium">{exp.company}</p>
+                  <p className="text-sm text-zinc-400 mb-2">
+                    {exp.period} • {exp.location}
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 text-zinc-300">
+                    {exp.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* EDUCATION SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Education</h1>
+            <div className="border-l-2 border-cyan-400 pl-6">
+              <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                <FaGraduationCap className="text-cyan-400" />
+                École Mohammadia des Ingénieurs (EMI)
+              </h3>
+              <p className="text-cyan-400 font-medium">Network & Telecommunications Engineering</p>
+              <p className="text-sm text-zinc-400 mb-2">
+                September 2023 - June 2026 • Rabat, Morocco
+              </p>
+              <p className="text-zinc-300">
+                Specialization in Cybersecurity, Incident Response, and Digital Forensics
+              </p>
+              <p className="text-zinc-400 text-sm mt-1">
+                Currently in 2nd year
+              </p>
+            </div>
+          </div>
+
+          {/* CERTIFICATIONS SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Certifications</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {CERTIFICATIONS.map((cert, index) => (
+                <div
+                  key={index}
+                  className="p-4 bg-zinc-800 border border-zinc-700 rounded-lg hover:border-cyan-400 transition-all"
+                >
+                  <div className="flex items-start gap-3">
+                    <FaCertificate className="text-cyan-400 text-2xl mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-white">{cert.name}</h3>
+                      <p className="text-sm text-zinc-400">{cert.code}</p>
+                      <p className="text-xs text-zinc-500 mt-1">
+                        {cert.issuer} • {cert.year}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* SKILLS SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Technical Skills</h1>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Security Analysis & Tools</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Wireshark", "Tenable Nessus", "Active Directory", "Splunk", "Sysmon", "SOAR", "EDR", "VirusTotal", "AbuseIPDB", "Shodan", "MITRE ATT&CK", "Anyrun"].map((skill) => (
+                    <span key={skill} className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-sm hover:border-cyan-400 transition-all">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Programming & Development</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Python", "C", "SQL", "JavaScript", "React", "Node.js"].map((skill) => (
+                    <span key={skill} className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-sm hover:border-cyan-400 transition-all">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">AI & Automation</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["LangChain", "AI APIs", "LLM Agents", "SOC Automation", "Threat Intelligence"].map((skill) => (
+                    <span key={skill} className="px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-sm hover:border-cyan-400 transition-all">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-white mb-4">Tools I Use Daily</h3>
               {!toolsLoaded ? (
                 <p className="h-[100px]"></p>
               ) : (
@@ -314,15 +363,16 @@ function Page() {
                     rewind: true,
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",
                     arrows: false,
+                    breakpoints: {
+                      640: { perPage: 3 },
+                      1024: { perPage: 5 },
+                    },
                   }}
-                  aria-label="My Favorite Images"
+                  aria-label="Tools"
                 >
-                  {TOOLS.reverse().map((tool) => (
+                  {TOOLS.map((tool) => (
                     <SplideSlide key={tool.name}>
-                      <div
-                        key={tool.name}
-                        className="w-fit p-2 border-[.5px] border-zinc-600 rounded-md"
-                      >
+                      <div className="w-fit p-2 border-[.5px] border-zinc-600 rounded-md hover:border-cyan-400 transition-all">
                         {tool.icon}
                       </div>
                     </SplideSlide>
@@ -330,34 +380,82 @@ function Page() {
                 </Splide>
               )}
             </div>
-            {/* <div className="">
-              <Splide
-                options={{
-                  type: "loop",
-                  interval: 2000,
-                  autoplay: true,
-                  pagination: false,
-                  speed: 3000,
-                  perPage: 5,
-                  perMove: 1,
-                  rewind: true,
-                  easing: "cubic-bezier(0.25, 1, 0.5, 1)",
-                  arrows: false,
-                }}
-                aria-label="My Favorite Images"
-              >
-                {TOOLS.map((tool) => (
-                  <SplideSlide key={tool.name}>
+          </div>
+
+          {/* LANGUAGES SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Languages</h1>
+            <div className="space-y-4">
+              {LANGUAGES.map((lang) => (
+                <div key={lang.name}>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-white font-medium">{lang.name}</span>
+                    <span className="text-zinc-400 text-sm">{lang.level}</span>
+                  </div>
+                  <div className="w-full bg-zinc-800 rounded-full h-2">
                     <div
-                      key={tool.name}
-                      className="w-fit p-2 border-[.5px] border-zinc-600 rounded-md"
-                    >
-                      {tool.icon}
-                    </div>
-                  </SplideSlide>
-                ))}
-              </Splide>
-            </div> */}
+                      className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full transition-all duration-1000"
+                      style={{ width: `${lang.percentage}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CONTACT SECTION */}
+          <div
+            className="p-10 border-[.5px] rounded-md border-zinc-600"
+            style={{ backdropFilter: "blur(2px)" }}
+          >
+            <h1 className="text-3xl mb-6 font-bold text-cyan-400">Contact Me</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <a
+                href="mailto:oussama.elmaskaoui@gmail.com"
+                className="flex items-center gap-3 p-4 bg-zinc-800 border border-zinc-700 rounded-lg hover:border-cyan-400 transition-all"
+              >
+                <FaEnvelope className="text-cyan-400 text-2xl" />
+                <div>
+                  <p className="text-sm text-zinc-400">Email</p>
+                  <p className="text-white font-medium">oussama.elmaskaoui@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+212614974221"
+                className="flex items-center gap-3 p-4 bg-zinc-800 border border-zinc-700 rounded-lg hover:border-cyan-400 transition-all"
+              >
+                <FaPhone className="text-cyan-400 text-2xl" />
+                <div>
+                  <p className="text-sm text-zinc-400">Phone</p>
+                  <p className="text-white font-medium">+212 614 974 221</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/oussama-el-maskaoui/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-zinc-800 border border-zinc-700 rounded-lg hover:border-cyan-400 transition-all"
+              >
+                <FaLinkedin className="text-cyan-400 text-2xl" />
+                <div>
+                  <p className="text-sm text-zinc-400">LinkedIn</p>
+                  <p className="text-white font-medium">/oussama-el-maskaoui</p>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-3 p-4 bg-zinc-800 border border-zinc-700 rounded-lg">
+                <FaMapMarkerAlt className="text-cyan-400 text-2xl" />
+                <div>
+                  <p className="text-sm text-zinc-400">Location</p>
+                  <p className="text-white font-medium">Casablanca, Morocco</p>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>

@@ -27,8 +27,9 @@ function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
         duration: 2,
         prevent: (node) => {
           if (isInsideModal) return true;
-          const modalOpen = node.classList.contains("modall");
-          return modalOpen;
+          // Désactiver Lenis quand on est dans un Dialog (modal)
+          return node.closest('[role="dialog"]') !== null ||
+                 node.closest('[data-radix-dialog-content]') !== null;
         },
       }}
     >
