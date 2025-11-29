@@ -66,7 +66,7 @@ const OnlineUsers = () => {
           variant="ghost"
           className={cn(
             "p-0 m-0 mr-4 h-fit w-fit transition-opacity duration-150",
-            users.length <= 1 ? "opacity-0" : "opacity-100",
+            "opacity-0 pointer-events-none",
           )}
         >
           <div className="relative flex flex-col gap-2">
