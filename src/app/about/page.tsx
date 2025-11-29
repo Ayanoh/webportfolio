@@ -17,7 +17,7 @@ import {
   SiWireshark,
   SiSplunk,
   SiKalilinux,
-  SiVisualstudio,
+  SiVisualstudiocode,
 } from "react-icons/si";
 
 // @ts-ignore
@@ -84,7 +84,7 @@ const TOOLS = [
   },
   {
     name: "VS Code",
-    icon: <SiVisualstudio size={50} color="#007acc" />,
+    icon: <SiVisualstudiocode size={50} color="#007acc" />,
     color: "#007acc",
   },
 ];
