@@ -190,12 +190,12 @@ const ProjectsSection = () => {
             try {
               const Icon = project?.icon || Folder;
               const safeProject = {
+                ...project,
                 title: project?.title || "Untitled Project",
                 category: project?.category || "Project",
                 coverImage: project?.coverImage || "/Projects/placeholder.png",
                 description: project?.description || "",
-                detailedDescription: project?.detailedDescription || "",
-                ...project
+                detailedDescription: project?.detailedDescription || ""
               };
               
               return (
