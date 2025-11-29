@@ -17,7 +17,6 @@ import {
   SiWireshark,
   SiSplunk,
   SiKalilinux,
-  SiVisualstudiocode,
 } from "react-icons/si";
 
 // @ts-ignore
@@ -81,11 +80,6 @@ const TOOLS = [
     name: "AWS",
     icon: <FaAws size={50} color="#FF9900" />,
     color: "#FF9900",
-  },
-  {
-    name: "VS Code",
-    icon: <SiVisualstudiocode size={50} color="#007acc" />,
-    color: "#007acc",
   },
 ];
 
