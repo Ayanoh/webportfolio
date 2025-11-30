@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState, useCallback } from "react";
 import { Application, SPEObject, SplineEvent } from "@splinetool/runtime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +10,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,6 +149,21 @@ const AnimatedBackground = () => {
       }
     }
   };
+
+  // Handle keyboard shortcuts for skills
+  const handleSkillTrigger = useCallback((skillName: SkillNames) => {
+    const skill = SKILLS[skillName];
+    if (skill) {
+      setSelectedSkill(skill);
+      // Auto-clear after 3 seconds
+      setTimeout(() => {
+        setSelectedSkill(null);
+      }, 3000);
+    }
+  }, []);
+
+  // Use keyboard shortcuts hook
+  useKeyboardShortcuts(handleSkillTrigger);
 
   // handle keyboard press interaction
   useEffect(() => {
