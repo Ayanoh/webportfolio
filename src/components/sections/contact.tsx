@@ -36,7 +36,7 @@ const ContactSection = () => {
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
-                className="text-gray-200 cursor-can-hover rounded-lg"
+                className="text-cyan-600 dark:text-cyan-400 font-semibold hover:underline cursor-pointer"
               >
                 {config.email.replace(/@/g, "(at)")}
               </a>{" "}
