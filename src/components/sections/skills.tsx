@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { BoxReveal } from "../reveal-animations";
 import { cn } from "@/lib/utils";
+import { Hand } from "lucide-react";
 
 const SkillsSection = () => {
   return (
@@ -23,9 +24,13 @@ const SkillsSection = () => {
         </Link>
 
         <BoxReveal width="100%" delay={0.3}>
-          <p className="text-center text-slate-600 dark:text-zinc-400 mb-12">
-            Press the keys on the keyboard 
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <Hand className="w-6 h-6 text-cyan-500 dark:text-cyan-400 animate-bounce" />
+            <p className="text-center text-lg font-semibold text-slate-700 dark:text-zinc-300 animate-pulse">
+              Click on the keyboard keys to explore my skills!
+            </p>
+            <Hand className="w-6 h-6 text-cyan-500 dark:text-cyan-400 animate-bounce" />
+          </div>
         </BoxReveal>
       </div>
     </section>

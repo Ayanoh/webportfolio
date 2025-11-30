@@ -59,8 +59,10 @@ const HeroSection = () => {
                         )}
                       >
                         Oussama
-                        <br className="md:block hidden" />
-                        EL Maskaoui
+                        <br />
+                        <span className="md:inline block">EL</span>
+                        <br className="md:hidden" />
+                        <span className="md:inline block"> Maskaoui</span>
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent
