@@ -60,9 +60,9 @@ const HeroSection = () => {
                       >
                         Oussama
                         <br />
-                        <span className="md:inline block">EL</span>
+                        <span className="md:inline block">EL </span>
                         <br className="md:hidden" />
-                        <span className="md:inline block"> Maskaoui</span>
+                        <span className="md:inline block">Maskaoui</span>
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent
