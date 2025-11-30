@@ -27,7 +27,8 @@ const NyanCat = () => {
   };
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "n") spawnDiv();
+      // Spawn nyan cat on ANY key press
+      spawnDiv();
     };
 
     window.addEventListener("keydown", handleKeyDown);
