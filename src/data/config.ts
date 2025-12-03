@@ -35,17 +35,17 @@ const config = {
   ],
   author: "Oussama EL Maskaoui",
   email: "oussama.elmaskaoui@gmail.com",
-  site: "https://oussamaelmaskaoui.com", // Tu changeras ça plus tard avec ton vrai domaine
+  site: "https://el-oussama.vercel.app",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/oussamaelmaskaoui/", // Remplace si tu as un compte Twitter/X
+    twitter: "https://x.com/oussamaelmaskaoui/",
     linkedin: "https://www.linkedin.com/in/oussama-el-maskaoui/",
-    instagram: "https://www.instagram.com/oussamaelmaskaoui/", // Remplace si tu as Instagram
-    facebook: "https://www.facebook.com/oussamaelmaskaoui/", // Remplace si tu as Facebook
-    github: "https://github.com/Ayanoh", // Remplace avec ton GitHub
+    instagram: "https://www.instagram.com/oussamaelmaskaoui/",
+    facebook: "https://www.facebook.com/oussamaelmaskaoui/",
+    github: "https://github.com/Ayanoh",
   },
 };
 export { config };

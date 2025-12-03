@@ -1,16 +1,10 @@
-![Portfolio Preview](https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/public/assets/seo/og-image.png?raw=true)
+# 🚀 Portfolio Website - Oussama EL Maskaoui
 
-# 🚀 My Portfolio Website
+Welcome to the repository for my personal portfolio website! This project showcases my skills, projects, and experience in Cybersecurity Engineering with a focus on AI-powered SOC automation and incident response.
 
-Welcome to the repository for my personal portfolio website! 🎉 This project is a culmination of creativity, technology, and my dedication to showcasing my skills, projects, and personality in a visually stunning and interactive manner.
+### Live preview: https://el-oussama.vercel.app/
 
-### Live preview: https://www.abhijitzende.com/
-
-![Preview](https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/public/assets/preview_video.gif?raw=true)
-
-https://github.com/Abhiz2411/3D-interactive-portfolio/blob/main/preview_video.mp4
-
-This project is **inspired** by the amazing work of [Naresh Khatri](https://github.com/Naresh-Khatri/Portfolio). His innovative approach to web design and attention to detail has been a huge influence. Thank you, Naresh! 🙏
+This project is **inspired** by the amazing work of [Naresh Khatri](https://github.com/Naresh-Khatri/Portfolio) and [Abhijit Zende](https://github.com/Abhiz2411/3D-interactive-portfolio). Their innovative approach to web design has been a huge influence. 🙏
 
 ## 🔥 Features
 
@@ -49,12 +43,12 @@ The portfolio website is built using the following tools and technologies:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Abhiz2411/3D-interactive-portfolio.git
+   git clone https://github.com/Ayanoh/webportfolio.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd 3D-interactive-portfolio
+   cd webportfolio
    ```
 
 3. Install dependencies:
@@ -83,7 +77,7 @@ The portfolio website is built using the following tools and technologies:
 
 ## 🚀 Deployment
 
-This project is deployed using **Vercel** for its blazing-fast performance and ease of use. You can view the live site [here](https://www.abhijitzende.com/).
+This project is deployed using **Vercel** for its blazing-fast performance and ease of use. You can view the live site [here](https://el-oussama.vercel.app/).
 
 ### Setting up Resend API on Vercel
 
@@ -99,14 +93,15 @@ Note: Make sure to keep your API key secret and never commit it to your reposito
 
 ## 💖 Acknowledgments
 
-A huge shoutout to [Naresh Khatri](https://github.com/Naresh-Khatri/Portfolio) for the inspiration and ideas that sparked this journey! 💡 If you're interested in creative web design, definitely check out his work.
+A huge shoutout to [Naresh Khatri](https://github.com/Naresh-Khatri/Portfolio) and [Abhijit Zende](https://github.com/Abhiz2411/3D-interactive-portfolio) for the inspiration and ideas! 💡
 
 ## 📬 Contact
 
-Feel free to reach out to me for collaboration, feedback, or just to say hi! 😊
+Feel free to reach out for collaboration, feedback, or just to say hi!
 
-- **Email:** abhijitzende75@gmail.com
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/zende-abhijit/)
+- **Email:** oussama.elmaskaoui@gmail.com
+- **LinkedIn:** [Oussama EL Maskaoui](https://www.linkedin.com/in/oussama-el-maskaoui/)
+- **GitHub:** [Ayanoh](https://github.com/Ayanoh)
 
 ---
 
