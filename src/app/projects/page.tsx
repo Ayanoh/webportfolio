@@ -11,68 +11,59 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
-    name: "AI Dockerfile optimizer",
-    description: `AI-Docker-file-optimizer helps optimize Dockerfiles for smaller, more efficient images. 
-            Simply paste your Dockerfile, and the app analyzes it for best practices and size 
-            optimization tips. It then provides a refactored, optimized version of the Dockerfile. 
-            Deployed on Vercel, it ensures fast and easy access to Dockerfile optimization..`,
-    link: "https://ai-docker-file-optimizer.netlify.app/",
+    name: "SOAR Automation Pipeline",
+    description: `Designed and implemented a Security Orchestration, Automation, and Response (SOAR)
+            pipeline to streamline incident response workflows. This project integrates threat intelligence,
+            automated triage, and response actions to enhance SOC efficiency and reduce incident response time.`,
+    link: "#",
     images: [
-      "/assets/projects-screenshots/aidockerfileoptimizer/1.png",
-      "/assets/projects-screenshots/aidockerfileoptimizer/2.png",
-      "/assets/projects-screenshots/aidockerfileoptimizer/3.png",
+      "/Projects/soar-pipeline.png",
+      "/Projects/soar1.jpeg",
+      "/Projects/soar2.jpeg",
+      "/Projects/soar3.jpeg",
+      "/Projects/soar4.jpeg",
+      "/Projects/soar5.jpeg",
+      "/Projects/soar6.jpeg",
     ],
   },
   {
     id: 2,
-    name: "financeme",
-    description: `This project demonstrates the deployment of a DevOps pipeline for a global banking and
-            financial services provider, FinanceMe. The company transitioned from a monolithic 
-            architecture to a microservice-based architecture to handle increased traffic and 
-            scaling challenges. The project involves automating infrastructure provisioning, build 
-            and deployment processes, and continuous monitoring using modern DevOps tools and 
-            AWS services.?`,
-    link: "https://github.com/Abhiz2411/FinanceMe-Devops-Project-01",
+    name: "Active Directory + Splunk Integration",
+    description: `Built a comprehensive Active Directory monitoring solution integrated with Splunk for
+            advanced threat detection and security analytics. This project enables real-time monitoring
+            of AD events, user behavior analytics, and automated alerting for suspicious activities.`,
+    link: "#",
     images: [
-      "/assets/projects-screenshots/financeme/1.png",
-      "/assets/projects-screenshots/financeme/2.png",
-      "/assets/projects-screenshots/financeme/3.png",
-      "/assets/projects-screenshots/financeme/4.png",
-      "/assets/projects-screenshots/financeme/5.png",
-      "/assets/projects-screenshots/financeme/6.png",
-      "/assets/projects-screenshots/financeme/7.png",
-      "/assets/projects-screenshots/financeme/8.png",
-      "/assets/projects-screenshots/financeme/9.png",
-      "/assets/projects-screenshots/financeme/10.png"
+      "/Projects/ad-splunk.png",
+      "/Projects/splunk1.jpeg",
+      "/Projects/splunk2.jpeg",
+      "/Projects/splunk3.jpeg",
+      "/Projects/splunk4.jpeg",
     ],
   },
   {
     id: 3,
-    name: "Portfolio",
-    description: `Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.`,
-    link: "https://www.abhijitzende.com/",
+    name: "SOC Lab Environment",
+    description: `Developed a complete SOC lab environment featuring Wazuh for endpoint detection and
+            response, integrated with various security tools for comprehensive threat monitoring and analysis.
+            This hands-on lab simulates real-world SOC operations and incident response scenarios.`,
+    link: "#",
     images: [
-      "/assets/projects-screenshots/myportfolio/landing.png",
-      "/assets/projects-screenshots/myportfolio/navbar.png",
-      "/assets/projects-screenshots/myportfolio/projects.png",
-      "/assets/projects-screenshots/myportfolio/project.png",
+      "/Projects/soc-lab.png",
+      "/Projects/labwazuh.png",
     ],
   },
   {
     id: 4,
-    name: "Smart Parking Assistant",
-    description: `Transform parking with the Smart Parking Assistant, an IoT marvel powered by Arduino 
-            and IR sensors to detect and recommend the best spots in real-time. Enjoy a sleek GUI 
-            that visualizes availability and an intelligent system for quick, optimal decisions. 
-            Built to adapt with customizable hardware and Python-powered software for seamless 
-            integration. Say goodbye to parking woes and hello to smarter space utilization!`,
-    link: "https://github.com/Abhiz2411/smart-parking-assistant",
+    name: "Vulnerability Assessment Platform",
+    description: `Created a vulnerability assessment platform to identify, classify, and prioritize
+            security vulnerabilities across network infrastructure. The platform automates scanning,
+            reporting, and remediation tracking to maintain a strong security posture.`,
+    link: "#",
     images: [
-      "/assets/projects-screenshots/smartparkingassitant/01.jpeg",
-      "/assets/projects-screenshots/smartparkingassitant/03.jpeg",
-      "/assets/projects-screenshots/smartparkingassitant/04.jpeg",
-
+      "/Projects/vuln-assessment.png",
+      "/Projects/vuln1.jpeg",
+      "/Projects/vuln2.jpeg",
     ],
   },
 ];
