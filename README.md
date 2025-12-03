@@ -1,3 +1,5 @@
+![Portfolio Preview](https://github.com/Ayanoh/webportfolio/blob/main/public/assets/seo/og-image.png?raw=true)
+
 # 🚀 Portfolio Website - Oussama EL Maskaoui
 
 Welcome to the repository for my personal portfolio website! This project showcases my skills, projects, and experience in Cybersecurity Engineering with a focus on AI-powered SOC automation and incident response.
