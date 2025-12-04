@@ -38,11 +38,13 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
-      return Response.json({ resendError }, { status: 500 });
+      console.error("Resend error:", resendError);
+      return Response.json({ error: resendError.message || "Failed to send email" }, { status: 500 });
     }
 
     return Response.json(resendData);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error("Unexpected error:", error);
+    return Response.json({ error: error instanceof Error ? error.message : "An unexpected error occurred" }, { status: 500 });
   }
 }
