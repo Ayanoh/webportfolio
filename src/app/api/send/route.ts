@@ -12,8 +12,10 @@ const Email = z.object({
 });
 export async function POST(req: Request) {
   try {
+    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
+    console.log("Resend instance:", !!resend);
     const body = await req.json();
-    console.log(body);
+    console.log("Request body:", body);
     const {
       success: zodSuccess,
       data: zodData,
