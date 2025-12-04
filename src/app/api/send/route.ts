@@ -3,20 +3,18 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-// Initialize Resend with API key from environment
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
   email: z.string().email({ message: "Email is invalid!" }),
   message: z.string().min(10, "Message is too short!"),
 });
+
 export async function POST(req: Request) {
   try {
-    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
-    console.log("Resend instance:", !!resend);
     const body = await req.json();
     console.log("Request body:", body);
+    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
+
     const {
       success: zodSuccess,
       data: zodData,
@@ -25,9 +23,13 @@ export async function POST(req: Request) {
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
-    if (!resend) {
+    // Initialize Resend inside the function to ensure env vars are loaded
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
       return Response.json({ error: "Email service not configured. Please contact the site administrator." }, { status: 503 });
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { data: resendData, error: resendError } = await resend.emails.send({
       from: "Porfolio <onboarding@resend.dev>",
