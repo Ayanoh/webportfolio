@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BoxReveal } from "../reveal-animations";
-import { Shield, Server, Search, Bug, X, ZoomIn, Folder } from "lucide-react";
+import { Shield, Server, Search, Bug, X, ZoomIn, Folder, Github, ArrowUpRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -81,6 +81,7 @@ const projects = [
       "Automated workflows reducing manual triage effort",
     ],
     images: [],
+    githubUrl: "https://github.com/Ayanoh/SOC-Automation-Lab/tree/main",
   },
   {
     title: "SOAR & EDR Automation Pipeline",
@@ -251,8 +252,24 @@ const ProjectsSection = () => {
                       <DialogDescription className="text-base mt-2">
                         {safeProject.category}
                       </DialogDescription>
+
+                      {/* GitHub Documentation Button */}
+                      {safeProject.githubUrl && (
+                        <div className="mt-4">
+                          <Link
+                            href={safeProject.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-black text-white rounded-lg font-semibold hover:bg-gray-800 dark:hover:bg-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                          >
+                            <Github className="w-5 h-5" />
+                            <span>View Project Documentation</span>
+                            <ArrowUpRight className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      )}
                     </DialogHeader>
-                    
+
                     <div className="space-y-6 mt-4">
                       {/* Overview */}
                       <div>
