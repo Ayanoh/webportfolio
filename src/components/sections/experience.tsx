@@ -63,6 +63,49 @@ const ZoomableImage = ({ src, alt }: { src: string; alt: string }) => {
 
 const experiences = [
   {
+    title: "Incident Response Intern",
+    company: "AXA Global Business Services (AXA GBS)",
+    dialogTitle: "Incident Responder at",
+    dialogCompany: "AXA GBS",
+    logo: "/companies/axa.jpeg",
+    location: "Rabat, Morocco",
+    period: "February 2026 - August 2026",
+    description: [
+      "Worked as a SOC Analyst Intern, performing incident response and security monitoring in a large enterprise environment:",
+      "Triaged and investigated security alerts using Microsoft Sentinel and Azure Data Explorer (ADX) with KQL queries.",
+      "Analyzed endpoint threats with Cybereason EDR.",
+      "Managed incident workflows and automated response tasks via Google SecOps (SOAR).",
+      "Tracked and documented incidents through AXA's in-house incident management platform.",
+    ],
+    detailedDescription: "Worked as a SOC Analyst Intern, performing incident response and security monitoring in a large enterprise environment.",
+    technologies: [
+      "Microsoft Sentinel",
+      "Azure Data Explorer (ADX)",
+      "KQL",
+      "Cybereason EDR",
+      "Google SecOps (SOAR)",
+      "Incident Management",
+    ],
+    achievements: [
+      {
+        title: "Security Monitoring",
+        description: "Triaged and investigated security alerts using Microsoft Sentinel and Azure Data Explorer (ADX) with KQL queries."
+      },
+      {
+        title: "Endpoint Threat Analysis",
+        description: "Analyzed endpoint threats with Cybereason EDR."
+      },
+      {
+        title: "Incident Automation",
+        description: "Managed incident workflows and automated response tasks via Google SecOps (SOAR)."
+      },
+      {
+        title: "Incident Documentation",
+        description: "Tracked and documented incidents through AXA's in-house incident management platform."
+      },
+    ],
+  },
+  {
     title: "SOC Engineering Intern",
     company: "Sekera",
     logo: "/companies/sekera.png",
@@ -131,42 +174,6 @@ const experiences = [
         { src: "/uploads/sekkera_projet.png", alt: "SOC Agent Architecture" }
       ]
     }
-  },
-  {
-    title: "Technical Account Manager",
-    company: "Orange",
-    logo: "/companies/orange.png",
-    location: "Casablanca, Morocco",
-    period: "July 2024 - August 2024",
-    description: [
-      "Contributed to telecommunications network audits (FH PTP)",
-      "Improved B2B infrastructure quality for 70+ clients",
-      "Collaborated with multiple teams for network optimization",
-    ],
-    detailedDescription: "During my internship at Orange, I contributed to improving the quality and reliability of telecommunications infrastructure for business clients. I participated in comprehensive network audits and worked closely with technical teams to optimize network performance and ensure service quality for enterprise customers.",
-    technologies: ["Network Auditing", "FH PTP (Point-to-Point Wireless)", "B2B Infrastructure", "Team Collaboration", "Telecommunications"],
-    achievements: [
-      {
-        title: "Network Audits",
-        description: "Conducted comprehensive network audits for point-to-point wireless links (FH PTP) across multiple client sites"
-      },
-      {
-        title: "Quality Improvements",
-        description: "Contributed to quality improvements affecting 70+ B2B enterprise clients through infrastructure optimization"
-      },
-      {
-        title: "Team Collaboration",
-        description: "Collaborated with cross-functional teams (network engineers, field technicians, account managers) for network optimization projects"
-      },
-      {
-        title: "Hands-on Experience",
-        description: "Gained hands-on experience in telecommunications infrastructure management and enterprise service delivery"
-      },
-      {
-        title: "Troubleshooting",
-        description: "Participated in troubleshooting and resolution of connectivity issues for critical business clients"
-      },
-    ],
   },
 ];
 
@@ -237,8 +244,8 @@ const ExperienceSection = () => {
                       <ul className="mt-4 space-y-2 text-slate-700 dark:text-zinc-300">
                         {exp.description.map((desc, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="text-cyan-500 dark:text-cyan-400 mt-1">▸</span>
-                            <span>{desc}</span>
+                            {i === 0 ? null : <span className="text-cyan-500 dark:text-cyan-400 mt-1">▸</span>}
+                            <span className={i === 0 ? "font-medium" : ""}>{desc}</span>
                           </li>
                         ))}
                       </ul>
@@ -258,7 +265,7 @@ const ExperienceSection = () => {
                   <DialogHeader>
                     <DialogTitle className="text-2xl flex items-center gap-3">
                       <Briefcase className="w-6 h-6 text-cyan-500" />
-                      <span>{exp.title} at</span>
+                      <span>{(exp as any).dialogTitle ?? `${exp.title} at`}</span>
                       {exp.logo && (
                         <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white dark:bg-zinc-800 p-1 border border-slate-200 dark:border-zinc-700">
                           <Image
@@ -269,7 +276,7 @@ const ExperienceSection = () => {
                           />
                         </div>
                       )}
-                      <span className="text-cyan-600 dark:text-cyan-400">{exp.company}</span>
+                      <span className="text-cyan-600 dark:text-cyan-400">{(exp as any).dialogCompany ?? exp.company}</span>
                     </DialogTitle>
                     <DialogDescription className="flex flex-wrap gap-4 text-sm mt-2">
                       <span className="flex items-center gap-1">
