@@ -129,6 +129,41 @@ const certifications = [
       "Automation and Programmability",
     ],
   },
+  {
+    name: "Microsoft Security Operations Analyst Associate",
+    code: "SC-200",
+    issuer: "Microsoft",
+    year: "2025",
+    icon: Shield,
+    description: "Microsoft certification validating skills in threat detection, investigation, and response using Microsoft security solutions.",
+    detailedDescription: "The SC-200 certification validates the ability to investigate, respond to, and hunt for threats using Microsoft Sentinel, Microsoft Defender for Cloud, and Microsoft 365 Defender. It covers the full threat lifecycle from detection to remediation.",
+    skills: [
+      "Microsoft Sentinel – SIEM & SOAR",
+      "Microsoft Defender XDR (Endpoint, Identity, Office 365)",
+      "Microsoft Defender for Cloud",
+      "Threat Investigation and Hunting",
+      "Incident Response and Remediation",
+      "KQL (Kusto Query Language)",
+    ],
+    certificateImage: "/uploads/sc200.png",
+  },
+  {
+    name: "CyberOps Associate",
+    code: "CyberOps",
+    issuer: "Cisco",
+    year: "2024",
+    icon: Shield,
+    description: "Cisco certification for security analysts working in a SOC environment.",
+    detailedDescription: "The Cisco CyberOps Associate certification prepares candidates for entry-level security analyst roles within a Security Operations Center (SOC). It covers security monitoring, host-based analysis, network intrusion analysis, and security policies and procedures.",
+    skills: [
+      "Security Monitoring and SIEM",
+      "Host-Based Intrusion Analysis",
+      "Network Intrusion Analysis",
+      "Security Policies and Procedures",
+      "Incident Response Lifecycle",
+      "Cryptography and PKI Fundamentals",
+    ],
+  },
 ];
 
 const CertificationsSection = () => {
