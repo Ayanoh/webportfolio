@@ -106,7 +106,7 @@ const experiences = [
     ],
   },
   {
-    title: "SOC Engineering Intern",
+    title: "AI & SOC Automation Engineer",
     company: "Sekera",
     logo: "/companies/sekera.png",
     location: "Casablanca, Morocco",
@@ -116,7 +116,7 @@ const experiences = [
       "Built specialized AI agents for automated investigation and threat analysis",
       "Reduced MTTR by 70% through intelligent automation and orchestration",
     ],
-    detailedDescription: "Vinici Logic represents a paradigm shift from traditional alert-centric SOC models to a modern 'Detection & Response as Code' approach. Unlike legacy SOAR platforms that merely orchestrate predefined workflows, Vinici Logic embeds automated verification, enrichment, and response logic directly within detection rules - eliminating Level 1 analyst dependency and the alert fatigue epidemic. Built on the SOCless philosophy pioneered by Netflix, the platform decentralizes triage to system experts through automation-first principles. During my internship, I architected and developed specialized AI agent modules that form the core investigation and analysis capabilities of the Vinici Logic platform.",
+    detailedDescription: "Vinici Logic represents a paradigm shift from traditional alert-centric SOC models to a modern 'Detection & Response as Code' approach. Unlike legacy SOAR platforms that merely orchestrate predefined workflows, Vinici Logic embeds automated verification, enrichment, and response logic directly within detection rules - eliminating Level 1 analyst dependency and the alert fatigue epidemic. Built on the SOCless philosophy pioneered by Netflix, the platform decentralizes triage to system experts through automation-first principles. On a fixed-term contract (CDD), I architected and developed specialized AI agent modules that form the core investigation and analysis capabilities of the Vinici Logic platform.",
     technologies: [
       "Python",
       "LangChain/LangGraph",
