@@ -32,7 +32,7 @@ const RESUMES = {
   en: {
     path: "/assets/ELMaskaoui_Oussama_CV_EN.pdf",
     file: "ELMaskaoui_Oussama_CV_EN.pdf",
-    available: false,
+    available: true,
   },
 } as const;
 
