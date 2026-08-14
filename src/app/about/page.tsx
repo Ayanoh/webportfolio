@@ -91,6 +91,12 @@ const CERTIFICATIONS = [
     year: "2024",
   },
   {
+    name: "Microsoft Security Operations Analyst",
+    code: "SC-200",
+    issuer: "Microsoft",
+    year: "2025",
+  },
+  {
     name: "AWS Cloud Practitioner",
     code: "Essentials",
     issuer: "Amazon Web Services",
@@ -209,16 +215,16 @@ function Page() {
             <h1 className="text-3xl mb-6 font-bold text-cyan-400">About Me</h1>
             <div className="space-y-4 text-zinc-300">
               <p className="leading-relaxed">
-                I&apos;m a final-year <span className="text-cyan-400 font-semibold">Cybersecurity Engineering student</span> at the <span className="text-cyan-400 font-semibold">Mohammadia School of Engineers (EMI)</span>, passionate about how AI and automation reshape modern Security Operations Centers.
+                <span className="text-cyan-400 font-semibold">Cybersecurity Engineer</span> passionate about how AI and automation reshape modern SOCs.
               </p>
               <p className="leading-relaxed">
-                Certified in <span className="text-cyan-400 font-semibold">CompTIA Security+</span>, I specialize in building intelligent systems that enhance detection, response, and decision-making in security operations.
+                Certified in <span className="text-cyan-400 font-semibold">CompTIA Security+ &amp; SC-200</span>, I specialize in building intelligent systems that enhance detection, response, and decision-making in security operations.
               </p>
               <p className="leading-relaxed">
-                My key interests include <span className="text-cyan-400 font-semibold">Incident Response</span>, <span className="text-cyan-400 font-semibold">Digital Forensics</span>, and <span className="text-cyan-400 font-semibold">AI-driven Threat Analysis</span>.
+                My key interests include <span className="text-cyan-400 font-semibold">Incident Response</span>, <span className="text-cyan-400 font-semibold">Digital Forensics</span>, <span className="text-cyan-400 font-semibold">GRC</span>, and <span className="text-cyan-400 font-semibold">AI-driven Threat Analysis</span>.
               </p>
               <p className="leading-relaxed">
-                I value innovation, continuous learning, and bridging the gap between human expertise and machine intelligence. Let&apos;s build the next generation of smarter, faster, and autonomous security operations.
+                I value innovation, continuous learning, and bridging the gap between human expertise and machine intelligence. Let&apos;s build the next generation of <span className="text-cyan-400 font-semibold">smarter, faster, and autonomous security operations</span>.
               </p>
             </div>
           </div>
