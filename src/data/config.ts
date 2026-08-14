@@ -1,9 +1,9 @@
 const config = {
   title: "Oussama EL Maskaoui | Cybersecurity Engineer",
   description: {
-    long: "Explore the portfolio of Oussama EL Maskaoui, a final-year Cybersecurity Engineering student at École Mohammadia des Ingénieurs (EMI) with experience as SOC Analyst at Sekera. Specialized in AI-powered SOC automation, incident response, and digital forensics. Certified in CompTIA Security+, AWS Cloud Practitioner, and SOC Analyst Path. Strong expertise in threat detection, response automation, and building intelligent security systems.",
+    long: "Explore the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specialized in AI-powered SOC automation, incident response, and digital forensics. Certified in CompTIA Security+, SC-200, AWS Cloud Practitioner, and SOC Analyst Path. Strong expertise in threat detection, response automation, and building intelligent security systems.",
     short:
-      "Discover the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineering student specializing in AI-driven SOC automation and incident response.",
+      "Discover the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specializing in AI-driven SOC automation, incident response, and GRC.",
   },
   keywords: [
     "Oussama",
@@ -16,10 +16,12 @@ const config = {
     "SOC Analyst",
     "Incident Response",
     "Digital Forensics",
+    "GRC",
     "AI Automation",
     "Security Operations",
     "Threat Intelligence",
     "CompTIA Security+",
+    "SC-200",
     "AWS",
     "SOAR",
     "EDR",

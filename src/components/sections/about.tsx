@@ -24,13 +24,13 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-700 dark:text-zinc-300">
           <BoxReveal width="100%" delay={0.3}>
             <p className="leading-relaxed">
-              I&apos;m a final-year <span className="text-cyan-500 dark:text-cyan-400 font-semibold">Cybersecurity Engineering student</span> at the <span className="text-cyan-500 dark:text-cyan-400 font-semibold">Mohammadia School of Engineers</span>, passionate about how AI and automation reshape modern SOCs.
+              <span className="text-cyan-500 dark:text-cyan-400 font-semibold">Cybersecurity Engineer</span> passionate about how AI and automation reshape modern SOCs.
             </p>
           </BoxReveal>
 
           <BoxReveal width="100%" delay={0.5}>
             <p className="leading-relaxed">
-              Certified in <span className="text-cyan-500 dark:text-cyan-400 font-semibold">CompTIA Security+</span>, I specialize in building intelligent systems that enhance detection, response, and decision-making in security operations. My key interests include <span className="text-cyan-500 dark:text-cyan-400 font-semibold">incident response</span>, <span className="text-cyan-500 dark:text-cyan-400 font-semibold">digital forensics</span>, and <span className="text-cyan-500 dark:text-cyan-400 font-semibold">AI-driven threat analysis</span>.
+              Certified in <span className="text-cyan-500 dark:text-cyan-400 font-semibold">CompTIA Security+ &amp; SC-200</span>, I specialize in building intelligent systems that enhance detection, response, and decision-making in security operations. My key interests include <span className="text-cyan-500 dark:text-cyan-400 font-semibold">incident response</span>, <span className="text-cyan-500 dark:text-cyan-400 font-semibold">digital forensics</span>, <span className="text-cyan-500 dark:text-cyan-400 font-semibold">GRC</span> and <span className="text-cyan-500 dark:text-cyan-400 font-semibold">AI-driven threat analysis</span>.
             </p>
           </BoxReveal>
 
