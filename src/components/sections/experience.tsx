@@ -63,8 +63,64 @@ const ZoomableImage = ({ src, alt }: { src: string; alt: string }) => {
 
 const experiences = [
   {
+    title: "AI Security Engineer",
+    company: "Sekera",
+    contractType: "Freelance",
+    dialogTitle: "AI Security Engineer at",
+    dialogCompany: "Sekera (Freelance)",
+    logo: "/companies/sekera.png",
+    location: "Casablanca, Morocco (Remote)",
+    period: "August 2026 - Present",
+    githubUrl: "https://github.com/Ayanoh/Vinci-ADR",
+    githubLabel: "View Vinci ADR on GitHub",
+    description: [
+      "Built Vinci ADR — an open-source, real-time Agent Detection & Response framework that protects AI agents and LLMs across their full execution lifecycle: input validation, tool execution interception, and output sanitization.",
+      "Dual-tier architecture combining 1,803 MITRE ATT&CK detection rules (SigmaHQ/Sage), 210 DLP secret patterns (Gitleaks + Shannon Entropy), and neural classifiers (DeBERTa-v3, ModernBERT, Meta Prompt-Guard) with a cognitive dual-agent investigation system for ambiguous threats — all under 20ms latency on CPU.",
+      "Framework-agnostic tool interception daemon with native MCP (JSON-RPC 2.0) and LangChain middleware, blocking destructive actions before execution regardless of the underlying LLM provider.",
+      "Output security layer with automatic secret redaction (DLP) and CWE Top 25 static code analysis on AI-generated code.",
+      "Validated results: 100% attack recall on DEF CON 31 AI Village benchmark · 98.86% block rate on NVIDIA garak adversarial probes · 238 automated tests (100% pass rate).",
+    ],
+    detailedDescription: "Built Vinci ADR — an open-source, real-time Agent Detection & Response (ADR) framework that protects AI agents and LLMs across their full execution lifecycle: input validation, runtime tool execution interception, and output sanitization. Operating as a freelance AI Security Engineer with Sekera, I designed and built this defense layer to secure agentic workflows against prompt injections, unauthorized tool invocations, privilege escalations, and credential leakage.",
+    technologies: [
+      "Agent Detection & Response (ADR)",
+      "Python",
+      "Model Context Protocol (MCP)",
+      "JSON-RPC 2.0",
+      "LangChain / LangGraph",
+      "DeBERTa-v3",
+      "ModernBERT",
+      "Meta Prompt-Guard",
+      "MITRE ATT&CK (SigmaHQ/Sage)",
+      "DLP & Shannon Entropy",
+      "NVIDIA Garak",
+      "DEF CON 31 AI Village",
+      "CWE Top 25",
+      "Linux Daemons",
+      "Docker",
+    ],
+    achievements: [
+      {
+        title: "Dual-Tier Architecture & Cognitive Dual-Agent System",
+        description: "Engineered a dual-tier detection engine combining 1,803 MITRE ATT&CK detection rules (SigmaHQ/Sage), 210 DLP secret patterns (Gitleaks + Shannon Entropy), and neural classifiers (DeBERTa-v3, ModernBERT, Meta Prompt-Guard) with an autonomous dual-agent investigation system for ambiguous threats — all executing under 20ms latency on CPU."
+      },
+      {
+        title: "Framework-Agnostic Tool Interception Daemon",
+        description: "Developed a low-latency interception daemon with native Model Context Protocol (MCP / JSON-RPC 2.0) and LangChain middleware, inspecting parameters and blocking destructive actions before execution regardless of the underlying LLM provider."
+      },
+      {
+        title: "Output Security Layer & Static Code Analysis",
+        description: "Implemented an automated egress security layer with real-time secret redaction (DLP) and CWE Top 25 static security analysis on AI-generated code snippets to prevent vulnerability propagation."
+      },
+      {
+        title: "Benchmark Validation & Security Evals",
+        description: "Achieved 100% attack recall on the DEF CON 31 AI Village benchmark, a 98.86% block rate against NVIDIA garak adversarial probes, and a 100% pass rate across 238 automated tests."
+      }
+    ],
+  },
+  {
     title: "Incident Response Intern",
     company: "AXA Global Business Services (AXA GBS)",
+    contractType: "Internship",
     dialogTitle: "Incident Responder at",
     dialogCompany: "AXA GBS",
     logo: "/companies/axa.jpeg",
@@ -108,9 +164,12 @@ const experiences = [
   {
     title: "AI & SOC Automation Engineer",
     company: "Sekera",
+    contractType: "CDD",
     logo: "/companies/sekera.png",
     location: "Casablanca, Morocco",
     period: "April 2024 - September 2024",
+    githubUrl: "https://github.com/Ayanoh/vinci-logic-soc-agent",
+    githubLabel: "View Vinici Logic Documentation",
     description: [
       "Contributed to the development of 'Vinici Logic', a Detection & Response as Code platform",
       "Built specialized AI agents for automated investigation and threat analysis",
@@ -239,6 +298,11 @@ const ExperienceSection = () => {
                           <MapPin className="w-4 h-4" />
                           {exp.location}
                         </span>
+                        {(exp as any).contractType && (
+                          <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                            {(exp as any).contractType}
+                          </span>
+                        )}
                       </div>
 
                       <ul className="mt-4 space-y-2 text-slate-700 dark:text-zinc-300">
@@ -250,8 +314,24 @@ const ExperienceSection = () => {
                         ))}
                       </ul>
 
-                      {/* Bouton View Details visible */}
-                      <div className="flex justify-end mt-6">
+                      {/* Card actions */}
+                      <div className="flex items-center justify-between mt-6">
+                        {(exp as any).githubUrl ? (
+                          <Link
+                            href={(exp as any).githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 dark:text-zinc-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors z-10"
+                          >
+                            <Github className="w-4 h-4" />
+                            <span>GitHub</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </Link>
+                        ) : (
+                          <div />
+                        )}
+
                         <div className="flex items-center gap-2 px-4 py-2 bg-cyan-500 dark:bg-cyan-400 text-white rounded-lg font-semibold group-hover:bg-cyan-600 dark:group-hover:bg-cyan-500 group-hover:scale-105 transition-all duration-300 shadow-md group-hover:shadow-lg">
                           <Eye className="w-4 h-4" />
                           <span>View Details</span>
@@ -287,19 +367,24 @@ const ExperienceSection = () => {
                         <MapPin className="w-4 h-4" />
                         {exp.location}
                       </span>
+                      {(exp as any).contractType && (
+                        <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                          {(exp as any).contractType}
+                        </span>
+                      )}
                     </DialogDescription>
 
-                    {/* GitHub Documentation Button - Only for Sekera */}
-                    {exp.company === "Sekera" && (
+                    {/* GitHub Documentation Button */}
+                    {(exp as any).githubUrl && (
                       <div className="mt-4">
                         <Link
-                          href="https://github.com/Ayanoh/vinci-logic-soc-agent"
+                          href={(exp as any).githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-black text-white rounded-lg font-semibold hover:bg-gray-800 dark:hover:bg-gray-900 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
                         >
                           <Github className="w-5 h-5" />
-                          <span>View Project Documentation</span>
+                          <span>{(exp as any).githubLabel ?? "View Project Documentation"}</span>
                           <ArrowUpRight className="w-4 h-4" />
                         </Link>
                       </div>

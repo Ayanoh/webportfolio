@@ -118,14 +118,38 @@ const CERTIFICATIONS = [
 
 const EXPERIENCES = [
   {
-    title: "SOC Analyst",
+    title: "AI Security Engineer",
     company: "Sekera",
     location: "Casablanca, Morocco",
-    period: "April 2025 - Present",
+    period: "August 2026 - Present • Freelance",
     description: [
-      "Developing an AI-powered SOC assistant to automatically analyze security alerts",
-      "Integrating TheHive, VirusTotal, and SentinelOne through function calling",
-      "Using advanced prompts to drive incident response without fixed workflows",
+      "Built Vinci ADR — an open-source, real-time Agent Detection & Response (ADR) framework protecting AI agents and LLMs across their full execution lifecycle",
+      "Engineered a dual-tier detection architecture combining 1,803 MITRE ATT&CK rules, 210 DLP patterns, and neural classifiers (DeBERTa-v3, ModernBERT, Meta Prompt-Guard) under 20ms CPU latency",
+      "Developed a framework-agnostic tool interception daemon with native MCP (JSON-RPC 2.0) and LangChain middleware, blocking destructive actions before execution",
+      "Implemented an output security layer with automated secret redaction (DLP) and CWE Top 25 static code analysis on AI-generated code",
+      "Validated results: 100% attack recall on DEF CON 31 AI Village · 98.86% block rate on NVIDIA garak · 238 automated tests (100% pass)",
+    ],
+  },
+  {
+    title: "Incident Response Intern",
+    company: "AXA Global Business Services (AXA GBS)",
+    location: "Rabat, Morocco",
+    period: "February 2026 - August 2026",
+    description: [
+      "Triaged and investigated security alerts using Microsoft Sentinel and Azure Data Explorer (ADX) with KQL queries",
+      "Analyzed endpoint threats with Cybereason EDR and automated response workflows via Google SecOps (SOAR)",
+      "Tracked and documented security incidents through AXA's in-house enterprise incident management platform",
+    ],
+  },
+  {
+    title: "AI & SOC Automation Engineer",
+    company: "Sekera",
+    location: "Casablanca, Morocco",
+    period: "April 2024 - September 2024",
+    description: [
+      "Contributed to the development of 'Vinici Logic', an autonomous Detection & Response as Code platform",
+      "Architected specialized AI agent modules (TheHive case management, OpenSearch SIEM, O365 compromise detection)",
+      "Reduced MTTR by 70% and automated 85% of L1 security triage operations",
     ],
   },
   {
