@@ -88,7 +88,7 @@ const HeroSection = () => {
                       side="top"
                       className="dark:bg-white dark:text-black"
                     >
-                      Cybersecurity Engineering Student
+                      Cybersecurity Engineer
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
@@ -99,7 +99,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Cyber Security Student
+                    Cyber Security Engineer
                   </p>
                 </BlurIn>
               </div>
