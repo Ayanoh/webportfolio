@@ -1,9 +1,9 @@
 const config = {
   title: "Oussama EL Maskaoui | Cybersecurity Engineer",
   description: {
-    long: "Explore the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specialized in AI-powered SOC automation, incident response, and digital forensics. Certified in CompTIA Security+, SC-200, AWS Cloud Practitioner, and SOC Analyst Path. Strong expertise in threat detection, response automation, and building intelligent security systems.",
+    long: "Explore the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specialized in Agent Detection & Response (ADR), AI-powered SOC automation, incident response, and digital forensics. Creator of Vinci ADR. Certified in CompTIA Security+, SC-200, AWS Cloud Practitioner, and SOC Analyst Path. Strong expertise in threat detection, response automation, and securing agentic AI systems.",
     short:
-      "Discover the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specializing in AI-driven SOC automation, incident response, and GRC.",
+      "Discover the portfolio of Oussama EL Maskaoui, a Cybersecurity Engineer specializing in Agent Detection & Response (ADR), AI-driven SOC automation, and incident response.",
   },
   keywords: [
     "Oussama",
@@ -13,6 +13,9 @@ const config = {
     "Oussama EL Maskaoui portfolio",
     "portfolio",
     "Cybersecurity",
+    "Agent Detection & Response",
+    "ADR",
+    "Vinci ADR",
     "SOC Analyst",
     "Incident Response",
     "Digital Forensics",
