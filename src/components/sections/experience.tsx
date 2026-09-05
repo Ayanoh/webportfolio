@@ -74,11 +74,10 @@ const experiences = [
     githubUrl: "https://github.com/Ayanoh/Vinci-ADR",
     githubLabel: "View Vinci ADR on GitHub",
     description: [
-      "Built Vinci ADR — an open-source, real-time Agent Detection & Response framework that protects AI agents and LLMs across their full execution lifecycle: input validation, tool execution interception, and output sanitization.",
-      "Dual-tier architecture combining 1,803 MITRE ATT&CK detection rules (SigmaHQ/Sage), 210 DLP secret patterns (Gitleaks + Shannon Entropy), and neural classifiers (DeBERTa-v3, ModernBERT, Meta Prompt-Guard) with a cognitive dual-agent investigation system for ambiguous threats — all under 20ms latency on CPU.",
-      "Framework-agnostic tool interception daemon with native MCP (JSON-RPC 2.0) and LangChain middleware, blocking destructive actions before execution regardless of the underlying LLM provider.",
-      "Output security layer with automatic secret redaction (DLP) and CWE Top 25 static code analysis on AI-generated code.",
-      "Validated results: 100% attack recall on DEF CON 31 AI Village benchmark · 98.86% block rate on NVIDIA garak adversarial probes · 238 automated tests (100% pass rate).",
+      "Built Vinci ADR — an open-source Agent Detection & Response framework that acts as a security layer between AI agents and the systems they operate on.",
+      "Intercepts, analyzes, and blocks malicious agent behavior in real-time — before it reaches the host.",
+      "Protects the full execution lifecycle: prompt input, tool calls, and generated output.",
+      "Validated at 100% recall on DEF CON 31 AI Village and 98.86% block rate on NVIDIA Garak.",
     ],
     detailedDescription: "Built Vinci ADR — an open-source, real-time Agent Detection & Response (ADR) framework that protects AI agents and LLMs across their full execution lifecycle: input validation, runtime tool execution interception, and output sanitization. Operating as a freelance AI Security Engineer with Sekera, I designed and built this defense layer to secure agentic workflows against prompt injections, unauthorized tool invocations, privilege escalations, and credential leakage.",
     technologies: [
