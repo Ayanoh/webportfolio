@@ -1,47 +1,22 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "../ui/button";
-import { File, Download } from "lucide-react";
+import { File } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { config } from "@/data/config";
-
-// Resume versions. To enable the English CV later: drop the PDF at the `path`
-// below and flip `available` to true — the toggle handles the rest.
-const RESUMES = {
-  fr: {
-    path: "/assets/ELMaskaoui_Oussama_CV.pdf",
-    file: "ELMaskaoui_Oussama_CV.pdf",
-    available: true,
-  },
-  en: {
-    path: "/assets/ELMaskaoui_Oussama_CV_EN.pdf",
-    file: "ELMaskaoui_Oussama_CV_EN.pdf",
-    available: true,
-  },
-} as const;
-
-type ResumeLang = keyof typeof RESUMES;
+import { REQUEST_RESUME_EVENT } from "../ContactForm";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
-  const [resumeLang, setResumeLang] = useState<ResumeLang>("fr");
-  const currentResume = RESUMES[resumeLang];
 
   return (
     <section id="hero" className={cn("relative w-full h-screen")}>
@@ -104,86 +79,22 @@ const HeroSection = () => {
                 </BlurIn>
               </div>
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
-                <Dialog>
-                  <DialogTrigger asChild className="flex-1">
-                    <div>
-                      <BoxReveal delay={2} width="100%">
-                        <Button className="flex items-center gap-2 w-full cursor-pointer">
-                          <File size={24} />
-                          <p>Resume</p>
-                        </Button>
-                      </BoxReveal>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-5xl h-[95vh] p-0 overflow-hidden flex flex-col">
-                    <DialogHeader className="px-6 pt-4 pb-3 shrink-0">
-                      <div className="flex flex-wrap items-center justify-between gap-3 pr-14">
-                        <DialogTitle className="text-2xl">My Resume</DialogTitle>
-                        <div className="flex items-center gap-3">
-                          <div className="flex rounded-md border border-slate-300 dark:border-zinc-700 overflow-hidden text-sm font-medium">
-                            {(["fr", "en"] as ResumeLang[]).map((lang) => (
-                              <button
-                                key={lang}
-                                type="button"
-                                onClick={() => setResumeLang(lang)}
-                                className={cn(
-                                  "px-3 py-1.5 transition-colors",
-                                  resumeLang === lang
-                                    ? "bg-cyan-600 text-white dark:bg-cyan-500"
-                                    : "bg-transparent text-slate-600 hover:bg-slate-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
-                                )}
-                                aria-pressed={resumeLang === lang}
-                              >
-                                {lang === "fr" ? "🇫🇷 FR" : "🇬🇧 EN"}
-                              </button>
-                            ))}
-                          </div>
-                          {currentResume.available ? (
-                            <a
-                              href={currentResume.path}
-                              download={currentResume.file}
-                              className="flex items-center gap-2"
-                            >
-                              <Button className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600">
-                                <Download size={18} />
-                                Download
-                              </Button>
-                            </a>
-                          ) : (
-                            <Button
-                              disabled
-                              className="flex items-center gap-2 opacity-50 cursor-not-allowed"
-                            >
-                              <Download size={18} />
-                              Download
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    </DialogHeader>
-                    <div className="flex-1 px-6 pb-6 min-h-0">
-                      {currentResume.available ? (
-                        <iframe
-                          src={currentResume.path}
-                          className="w-full h-full border-0 rounded-lg"
-                          title="Resume PDF"
-                        />
-                      ) : (
-                        <div className="flex h-full flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-slate-300 dark:border-zinc-700 text-center text-slate-500 dark:text-zinc-400">
-                          <File size={48} />
-                          <p className="text-lg font-semibold">
-                            English version coming soon
-                          </p>
-                          <p className="max-w-sm text-sm">
-                            The English résumé isn&apos;t ready yet. Switch to{" "}
-                            <span className="font-medium">🇫🇷 FR</span> to view the
-                            current version.
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                <Link
+                  href={"#contact"}
+                  onClick={() =>
+                    window.dispatchEvent(new Event(REQUEST_RESUME_EVENT))
+                  }
+                >
+                  <BoxReveal delay={2} width="100%">
+                    <Button className="flex items-center gap-2 w-full cursor-pointer">
+                      <File size={24} />
+                      <p>Request Resume</p>
+                    </Button>
+                  </BoxReveal>
+                </Link>
+                <p className="-mt-1 text-xs text-center text-slate-500 dark:text-zinc-400">
+                  Available on request · I usually reply within 24h
+                </p>
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>

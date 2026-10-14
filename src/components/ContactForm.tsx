@@ -9,6 +9,16 @@ import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 
+// Dispatched by the hero "Request Resume" button to pre-fill the message.
+export const REQUEST_RESUME_EVENT = "request-resume";
+
+const RESUME_REQUEST_MESSAGE = `Hi Oussama,
+
+I'm [your name] from [company], and I'm interested in your profile for the [position] role.
+Could you please send me your resume?
+
+Best regards,`;
+
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -17,6 +27,13 @@ const ContactForm = () => {
 
   const { toast } = useToast();
   const router = useRouter();
+
+  React.useEffect(() => {
+    const prefill = () =>
+      setMessage((current) => current.trim() ? current : RESUME_REQUEST_MESSAGE);
+    window.addEventListener(REQUEST_RESUME_EVENT, prefill);
+    return () => window.removeEventListener(REQUEST_RESUME_EVENT, prefill);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
